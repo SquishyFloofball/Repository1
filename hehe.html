@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Gwyneth</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccd5;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ffb3c1;
+            border: none;
+            border-radius: 5px;
+        }
+        #gif-container {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <button onclick="nextPage(1)">Press me</button>
+    </div>
+    <div id="gif-container">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat Kissing Screen">
+    </div>
+
+    <script>
+        let step = 0;
+
+        function nextPage(choice) {
+            const content = document.getElementById("content");
+            step++;
+            
+            switch(step) {
+                case 1:
+                    content.innerHTML = `<h1>To Gwyneth</h1><button onclick='nextPage()'>Next Page</button>`;
+                    break;
+                case 2:
+                    content.innerHTML = `<p>Hiii bb, thanksss for making time going out on a theater date ganina!</p><button onclick='nextPage()'>Next Page</button>`;
+                    break;
+                case 3:
+                    content.innerHTML = `<h1>Choose one biii</h1><button onclick='nextPage()'>Proceed</button>`;
+                    break;
+                case 4:
+                    content.innerHTML = `<p>What LEGO car do you prefer?</p>
+                        <button onclick='nextPage()'>A. Porsche</button>
+                        <button onclick='nextPage()'>B. McLaren</button>
+                        <button onclick='nextPage()'>C. Character Figure na LEGO</button>`;
+                    break;
+                case 5:
+                    content.innerHTML = `<p>If there would be a zombie apocalypse outbreak, where would you go?</p>
+                        <button onclick='nextPage()'>A. Mall</button>
+                        <button onclick='nextPage()'>B. 7-Eleven</button>
+                        <button onclick='nextPage()'>C. Pundo balay</button>`;
+                    break;
+                case 6:
+                    content.innerHTML = `<p>Last question, Sa tanan gift na akong ghatag, asa pinaka valuable para saimo?</p>
+                        <button onclick='nextPage()'>A. Food/sweets</button>
+                        <button onclick='nextPage()'>B. Box with DIY crafts inside</button>
+                        <button onclick='nextPage()'>C. Gummy worm</button>
+                        <button onclick='nextPage()'>D. Finger/Hand Print</button>`;
+                    break;
+                case 7:
+                    content.innerHTML = `<p>Tenkyuuu for answering bb, again happy hearts day!! Mwamwa^</p>
+                        <button onclick='showGif()'>Special Gift</button>`;
+                    break;
+            }
+        }
+
+        function showGif() {
+            document.getElementById("gif-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>
